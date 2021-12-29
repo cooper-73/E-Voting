@@ -1,0 +1,12 @@
+[programs.localnet]
+voto_electronico = "ESiQM6PKr1xeCEm8CGTkPBaqhegED9irwgNMG9jQxthZ"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/home/cooper73/.config/solana/id.json"
+
+[scripts]
+test = "mocha -t 1000000 tests/"
