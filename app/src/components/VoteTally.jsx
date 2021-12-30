@@ -44,9 +44,9 @@ export default function VoteTally({ votes, votesCount }) {
       />
       <Box display="flex" justifyContent="space-between">
           <Typography variant="h6" className={classes.textResult}>
-            {percentize(votesCount / (votes.timBerners + votes.alanTuring + votes.donaldKnuth + votes.barbaraLiskov))}
+            {(typeof votes.barbaraLiskov !== "number") ? percentize(0.25) : percentize(votesCount / (votes.timBerners + votes.alanTuring + votes.donaldKnuth + votes.barbaraLiskov))}
             {" ("}
-            {formatWithCommas(votesCount)}
+            {(typeof votes.barbaraLiskov !== "number") ? formatWithCommas(0) : formatWithCommas(votesCount)}
             {votesCount === 1 ? " voto)" : " votos)"}
           </Typography>
       </Box>

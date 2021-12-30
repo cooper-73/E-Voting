@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("ESiQM6PKr1xeCEm8CGTkPBaqhegED9irwgNMG9jQxthZ");
+declare_id!("BUsPJxSLyeiGjLNgwT2NrJVGqVhEWtErqWTDhfSravnv");
 
 #[program]
 pub mod voto_electronico {
@@ -8,26 +8,31 @@ pub mod voto_electronico {
 
     pub fn initialize(ctx: Context<Initialize>, bump: u8) -> ProgramResult {
         ctx.accounts.vote_account.bump = bump;
+        msg!("Votacion inicializada");
         Ok(())
     }
 
     pub fn vote_for_tim_berners(ctx: Context<Vote>) -> ProgramResult {
         ctx.accounts.vote_account.tim_berners += 1;
+        msg!("Voto por Tim Berners");
         Ok(())
     }
 
     pub fn vote_for_alan_turing(ctx: Context<Vote>) -> ProgramResult {
         ctx.accounts.vote_account.alan_turing += 1;
+        msg!("Voto por Alan Turing");
         Ok(())
     }
 
     pub fn vote_for_donald_knuth(ctx: Context<Vote>) -> ProgramResult {
         ctx.accounts.vote_account.donald_knuth += 1;
+        msg!("Voto por Donald Knuth");
         Ok(())
     }
 
     pub fn vote_for_barbara_liskov(ctx: Context<Vote>) -> ProgramResult {
         ctx.accounts.vote_account.barbara_liskov += 1;
+        msg!("Voto por Barbara Liskov");
         Ok(())
     }
 }
